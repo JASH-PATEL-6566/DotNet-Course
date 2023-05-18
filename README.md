@@ -37,7 +37,7 @@ Write-Host "Finished!" -ForegroundColor Green
 
 ```dotnet run``` - without hot-reloading <br/>
 ```dotnet watch``` - with hot-reloading <br/>
-```dotnet watch --not-hot-reloading``` - most prefered way to run code <br/>
+```dotnet watch --no-hot-reload``` - most prefered way to run code <br/>
 
 
 # Generate Table based on Entity which we set
