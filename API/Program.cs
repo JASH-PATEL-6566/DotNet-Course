@@ -1,3 +1,6 @@
+using Application.Activities;
+using Application.Core;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 
@@ -26,6 +29,12 @@ builder.Services.AddCors(opt =>
         policy.AllowAnyMethod().AllowAnyHeader().WithOrigins("http://localhost:3000");
     });
 });
+
+builder.Services.AddMediatR(typeof(List.Handler));
+builder.Services.AddMediatR(typeof(Details.Handler));
+
+// register our mapping profile
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
 // generating app object like express
 var app = builder.Build();
